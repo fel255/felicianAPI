@@ -3,377 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[ERROR: FELICIAN_BOT ACTIVE]—DEPLOY MODE*</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>𝐅𝐄𝐋𝐈𝐂𝐈𝐀𝐍 | 𝐃𝐎𝐖𝐍𝐋𝐎𝐀𝐃𝐄𝐑 ⚙️</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --accent: #fd79a8;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --warning: #fdcb6e;
+            --danger: #d63031;
         }
-
+        
         body {
-            overflow-x: hidden;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            background-color: #000;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0f0f13;
+            color: var(--light);
+            margin: 0;
+            padding: 20px;
+            background-image: radial-gradient(circle at 25% 25%, rgba(108, 92, 231, 0.15) 0%, transparent 50%);
+            min-height: 100vh;
         }
-
-        #video-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 500px;
-            backdrop-filter: blur(16px) saturate(180%);
-            -webkit-backdrop-filter: blur(16px) saturate(180%);
-            background-color: rgba(255, 255, 255, 0.05); /* More translucent */
-            border-radius: 16px; /* Curved edges */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* Thin border */
-            padding: 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-            margin: 1rem;
-        }
-
-        .container::before {
-            content: '';
+        
+        .premium-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 255, 255, 0.03) 0%,
-                rgba(255, 255, 255, 0) 50%,
-                rgba(255, 255, 255, 0.03) 100%
-            );
-            z-index: -1;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+            color: var(--dark);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(253, 203, 110, 0.3);
         }
-
-        h1 {
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            color: white;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-            font-weight: 600;
+        
+        .menu-container {
+            border: 1px solid rgba(108, 92, 231, 0.3);
+            border-radius: 12px;
+            padding: 0;
+            background-color: rgba(20, 20, 30, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
         }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1rem;
-            border-radius: 16px; /* Curved edges */
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            background: rgba(255, 255, 255, 0.1);
+        
+        .user-info {
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.2), rgba(45, 52, 54, 0.5));
+            border-bottom: 1px solid rgba(108, 92, 231, 0.2);
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .info-item {
+            display: flex;
             align-items: center;
-            font-size: 2rem;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 13px;
         }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-            text-align: left;
+        
+        .info-item i {
+            margin-right: 8px;
+            color: var(--secondary);
+            font-size: 14px;
         }
-
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
+        
+        .greeting {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--light);
+            margin-bottom: 5px;
         }
-
-        input {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.08);
-            color: white;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+        
+        .menu-header {
+            font-size: 20px;
+            font-weight: 700;
+            padding: 20px;
+            color: var(--light);
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
         }
-
-        input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.12);
+        
+        .menu-header::before, .menu-header::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(108, 92, 231, 0.5), transparent);
+            margin: 0 15px;
         }
-
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
         }
-
-        button {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 12px;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        
+        .menu-item {
             position: relative;
             overflow: hidden;
-            margin-top: 0.5rem;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        button:active {
-            transform: translateY(0);
-        }
-
-        button i {
-            margin-right: 8px;
-        }
-
-        .result {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            border-radius: 12px;
-            display: none;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .success {
-            background: rgba(0, 255, 0, 0.08);
-            border-color: rgba(0, 255, 0, 0.3);
-        }
-
-        .warning {
-            background: rgba(255, 200, 0, 0.08);
-            border-color: rgba(255, 200, 0, 0.3);
-        }
-
-        .error {
-            background: rgba(255, 0, 0, 0.08);
-            border-color: rgba(255, 0, 0, 0.3);
-        }
-
-        .action-btn {
-            margin-top: 1rem;
-            display: none;
-        }
-
-        .loader {
-            display: none;
-            width: 50px;
-            height: 50px;
-            margin: 1rem auto;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            border-top-color: rgba(255, 255, 255, 0.8);
-            animation: spin 1s ease-in-out infinite;
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        .repo-info {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            padding: 0.5rem;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
+        
+        .menu-item a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            color: var(--light);
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 100%;
+        }
+        
+        .menu-item a:hover {
+            background-color: rgba(108, 92, 231, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+        }
+        
+        .menu-item-number {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .menu-item-name {
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .menu-footer {
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        @media (max-width: 600px) {
+            .menu-items {
+                grid-template-columns: 1fr;
             }
             
-            h1 {
-                font-size: 1.5rem;
+            .user-info {
+                flex-direction: column;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <video id="video-bg" autoplay muted loop>
-        <source src="https://files.catbox.moe/5omeuc.mp4" type="video/mp4">
-    </video>
-
-    <div class="container">
-        <div class="logo">
-            <i class="fas fa-robot"></i>
+    <div class="menu-container">
+        <div class="premium-badge">Premium</div>
+        
+        <div class="user-info">
+            <div>
+                <div class="greeting" id="greeting">Good Evening</div>
+                <div class="info-item">
+                    <i class="fas fa-download"></i>
+                    <span>felician download cenrter</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-lock"></i>
+                <span>Secure Connection</span>
+            </div>
         </div>
-        <h1>[ERROR: FELICIAN_BOT ACTIVE] — DEPLOY MODE*</h1>
         
-        <div class="form-group">
-            <label for="github-username">GitHub Username</label>
-            <input type="text" id="github-username" placeholder="Enter GitHub username">
+        <div class="menu-header">DOWNLOAD CENTER</div>
+        
+        <div class="menu-items">
+            <div class="menu-item">
+                <a href="/spotify">
+                    <span class="menu-item-number">1</span>
+                    <span class="menu-item-name">Spotify Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/instagram">
+                    <span class="menu-item-number">2</span>
+                    <span class="menu-item-name">Instagram Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/apk">
+                    <span class="menu-item-number">3</span>
+                    <span class="menu-item-name">APK Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/tiktok">
+                    <span class="menu-item-number">4</span>
+                    <span class="menu-item-name">TikTok Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/twitter">
+                    <span class="menu-item-number">5</span>
+                    <span class="menu-item-name">Twitter Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/facebook">
+                    <span class="menu-item-number">6</span>
+                    <span class="menu-item-name">Facebook Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/likee">
+                    <span class="menu-item-number">7</span>
+                    <span class="menu-item-name">Likee Downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/yt">
+                    <span class="menu-item-number">8</span>
+                    <span class="menu-item-name">YouTube to MP3 audio</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/ytmp4">
+                    <span class="menu-item-number">9</span>
+                    <span class="menu-item-name">YouTube to MP4 video</span>
+                </a>
+            </div>
+          <div class="menu-item">
+                <a href="/video">
+                    <span class="menu-item-number">10</span>
+                    <span class="menu-item-name">Yt video </span>
+                </a>
+            </div> 
+            <div class="menu-item">
+                <a href="/play">
+                    <span class="menu-item-number">11</span>
+                    <span class="menu-item-name">play (audio)</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/soundcloud">
+                    <span class="menu-item-number">12</span>
+                    <span class="menu-item-name">soundcloud downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/pinterest">
+                    <span class="menu-item-number">13</span>
+                    <span class="menu-item-name">pinterest image / video downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/capcut">
+                    <span class="menu-item-number">14</span>
+                    <span class="menu-item-name">capcut downloader</span>
+                </a>
+            </div>
+            <div class="menu-item">
+                <a href="/mediafire">
+                    <span class="menu-item-number">15</span>
+                    <span class="menu-item-name">MediaFire Downloader</span>
+                </a>
+            </div>
         </div>
         
-        <button id="check-fork">Deploy</button>
-        
-        <div class="loader" id="loader"></div>
-        
-        <div class="result" id="result"></div>
-        
-        <button class="action-btn" id="fork-btn">
-            <i class="fas fa-code-branch"></i> Fork Repository
-        </button>
-        
-        <button class="action-btn" id="deploy-btn">
-            <i class="fas fa-rocket"></i> Deploy to Heroku
-        </button>
-        
-        <button class="action-btn" id="sync-btn">
-            <i class="fas fa-sync-alt"></i> Sync Now
-        </button>
-        
-        <div class="repo-info" id="repo-info"></div>
+        <div class="menu-footer">
+            © 2025 powered by skiddybmx
+        </div>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const checkForkBtn = document.getElementById('check-fork');
-        const githubUsernameInput = document.getElementById('github-username');
-        const resultDiv = document.getElementById('result');
-        const loader = document.getElementById('loader');
-        const forkBtn = document.getElementById('fork-btn');
-        const deployBtn = document.getElementById('deploy-btn');
-        const syncBtn = document.getElementById('sync-btn');
-        const repoInfo = document.getElementById('repo-info');
-        
-        const originalRepo = 'fel255/IT-TECH';
-        const herokuDeployUrl = `https://heroku.com/deploy?template=https://github.com/${originalRepo}`;
-        
-        checkForkBtn.addEventListener('click', checkForkStatus);
-        
-        async function checkForkStatus() {
-            const username = githubUsernameInput.value.trim();
+        // Set greeting based on time of day
+        function setGreeting() {
+            const hour = new Date().getHours();
+            const greeting = document.getElementById('greeting');
             
-            if (!username) {
-                showResult('Please enter your GitHub username', 'error');
-                return;
-            }
-            
-            // Show loader
-            loader.style.display = 'block';
-            checkForkBtn.disabled = true;
-            hideAllButtons();
-            resultDiv.style.display = 'none';
-            
-            try {
-                // Check if user has forked the repo
-                const forkCheckUrl = `https://api.github.com/repos/${username}/IT-TECH`;
-                
-                const response = await fetch(forkCheckUrl);
-                
-                if (response.status === 404) {
-                    // Fork doesn't exist
-                    showResult('You haven\'t forked the repository yet.', 'error');
-                    forkBtn.style.display = 'block';
-                    repoInfo.textContent = '';
-                } else if (response.ok) {
-                    // Fork exists, check if it's up to date
-                    const repoData = await response.json();
-                    const parentRepo = repoData.parent;
-                    
-                    if (parentRepo && parentRepo.full_name === originalRepo) {
-                        // Get latest commit from original repo
-                        const originalCommitsUrl = `https://api.github.com/repos/${originalRepo}/commits?per_page=1`;
-                        const originalCommitsResponse = await fetch(originalCommitsUrl);
-                        const originalCommitsData = await originalCommitsResponse.json();
-                        const originalLatestCommit = originalCommitsData[0].sha;
-                        
-                        // Get latest commit from user's fork
-                        const forkCommitsUrl = `https://api.github.com/repos/${username}/IT-TECH/commits?per_page=1`;
-                        const forkCommitsResponse = await fetch(forkCommitsUrl);
-                        const forkCommitsData = await forkCommitsResponse.json();
-                        const forkLatestCommit = forkCommitsData[0].sha;
-                        
-                        if (forkLatestCommit === originalLatestCommit) {
-                            // Repo is up to date - show deploy button only
-                            showResult('Your fork is up to date and ready for deployment!', 'success');
-                            deployBtn.style.display = 'block';
-                            repoInfo.textContent = `Repository: ${username}/IT-TECH (up to date)`;
-                        } else {
-                            // Repo is behind - show sync button only
-                            showResult('Your fork is behind the original repository. Please sync before deploying.', 'warning');
-                            syncBtn.style.display = 'block';
-                            repoInfo.textContent = `Repository: ${username}/IT-TECH (behind upstream)`;
-                        }
-                    } else {
-                        showResult('This repository is not a fork of the required repository.', 'error');
-                        forkBtn.style.display = 'block';
-                        repoInfo.textContent = '';
-                    }
-                } else {
-                    throw new Error('Failed to check repository status');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                showResult('An error occurred while checking your fork status. Please try again.', 'error');
-            } finally {
-                loader.style.display = 'none';
-                checkForkBtn.disabled = false;
+            if (hour < 12) {
+                greeting.textContent = 'Good Morning';
+            } else if (hour < 18) {
+                greeting.textContent = 'Good Afternoon';
+            } else {
+                greeting.textContent = 'Good Evening';
             }
         }
         
-        function showResult(message, type) {
-            resultDiv.textContent = message;
-            resultDiv.className = 'result ' + type;
-            resultDiv.style.display = 'block';
-        }
-        
-        function hideAllButtons() {
-            forkBtn.style.display = 'none';
-            deployBtn.style.display = 'none';
-            syncBtn.style.display = 'none';
-        }
-        
-        forkBtn.addEventListener('click', function() {
-            window.open(`https://github.com/${originalRepo}/fork`, '_blank');
-        });
-        
-        deployBtn.addEventListener('click', function() {
-            const username = githubUsernameInput.value.trim();
-            window.open(`https://heroku.com/deploy?template=https://github.com/${username}/IT-TECH`, '_blank');
-        });
-        
-        syncBtn.addEventListener('click', function() {
-            const username = githubUsernameInput.value.trim();
-            window.open(`https://github.com/${username}/IT-TECH/compare/master...${originalRepo.split('/')[0]}:master`, '_blank');
-        });
-    });
+        // Initialize all functions
+        window.onload = function() {
+            setGreeting();
+        };
     </script>
 </body>
-            </html
+                        </html>
